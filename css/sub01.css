@@ -1,0 +1,59 @@
+.sub_cate_nav{
+    width: 720px;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    background: white;
+    font-family: AppleSDGothicNeo-Light,Dotum,Helvetica,"sans-serif"!important;
+}
+.sub_cate_nav li {
+    padding: 22px 0;
+    font-size: 20px;
+    flex: 1 1 auto;
+}
+.sub_cate_nav li a{
+    color: rgb(187, 187, 187);
+}
+
+.sub_cate_nav li .sub_nav_active{
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+}
+
+/* topBanner */
+.sub_top_banner{
+    width: 720px; height: 360px;
+    position: relative; left: 0; top: 0;
+}
+.sub_top_banner figure{}
+.sub_top_banner figure img:first-of-type{width: 720px;}
+.sub_top_banner figCaption{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    margin-left: 30px;
+    left: 0; top: 0;
+}
+.sub_top_banner figCaption i{
+    flex: 1 0 auto;
+    margin-top: 30px;
+}
+.sub_top_banner figCaption img{
+    height: 36px;
+}
+.sub_top_banner figCaption span{
+    font-size: 34px;
+    color: white;
+    font-weight: 600;
+}
+.sub_top_banner figCaption span:nth-of-type(2){
+    margin-top: 2px;
+}
+.sub_top_banner figCaption span:last-of-type{
+    margin-top: 20px; margin-bottom: 30px;
+    font-size: 20px;
+    opacity: .8;
+    font-weight: normal;
+}

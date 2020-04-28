@@ -57,6 +57,7 @@ window.addEventListener('load', function(){
        createContents(9, 12);
        createRecSlide(mainDatas[4], recSlideBannerDatas);
        createBottomAppDownLoad();
+       console.log(location.search);
    }
 
     function createMainSlide(){
