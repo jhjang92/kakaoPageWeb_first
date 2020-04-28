@@ -1,5 +1,5 @@
 let loadingState = true;
-let contentBox;
+let contentBox, contentBoxTag;
 let webToonData, pureToon, boyToon, dramaToon, blToon, actionToon, waitFreeToonData = [], vodData;
 window.addEventListener('DOMContentLoaded', function(){
 
@@ -34,11 +34,13 @@ window.addEventListener('DOMContentLoaded', function(){
     
 });
 
-function articleCreate(mainSection, content, addListCnt, type, dataType, hot){
+function articleCreate(contentBoxTag, mainSection, content, addListCnt, type, dataType, hot){
     console.log("articleCreate");
-    if(!mainSection.querySelector('.content_box')){
-        mainSection = document.querySelector('.main');
-        mainSection.append(contentBox);
+    if(mainSection != ""){
+        if(!mainSection.querySelector('.content_box')){
+            mainSection = document.querySelector('.main');
+            mainSection.append(contentBoxTag);
+        }
     }
 
     var typeData; //main 에서 받아온 type을 기준으로 data를 담아서 진행
@@ -50,22 +52,25 @@ function articleCreate(mainSection, content, addListCnt, type, dataType, hot){
         case 4: typeData = blToon; break;
         case 5: typeData = actionToon; break;
         case 50: typeData = vodData; break;
-        case 100: typeData = waitFreeToonData; break;
+        case 100: typeData = waitFreeToonData; addListCnt = waitFreeToonData.length; break;
     }
 
     var article = document.createElement('article');
-    contentBox.append(article);
+    contentBoxTag.append(article);
 
-    var h3 = document.createElement('h3');
-    h3.title = content;
-    h3.innerText = content;
-    article.append(h3);
-
-    if(dataType != 2){
-        var small = document.createElement('small');
-        small.innerText = "(" + typeData.length + ")"; //데이터 다 받아와지면 그때
-        h3.append(small);
+    if(dataType != ""){
+        var h3 = document.createElement('h3');
+        h3.title = content;
+        h3.innerText = content;
+        article.append(h3);
+    
+        if(dataType != 2){
+            var small = document.createElement('small');
+            small.innerText = "(" + typeData.length + ")"; //데이터 다 받아와지면 그때
+            h3.append(small);
+        }
     }
+    
     if(hot){
         typeData.sort(function(a, b){
             return b["views"] - a["views"];
@@ -82,7 +87,7 @@ function listContentCreate(article,addListCnt, typeData, dataType){
         case 1: dataTypeName = "_vod", dataTypeFigure = ""; break;
         case 2: dataTypeName = "", dataTypeFigure = "_ranking"; break;
 
-        default: console.log("예외"); break;
+        default: dataTypeName = "", dataTypeFigure = ""; break;
     }
 
     var ul = document.createElement('ul');
@@ -290,6 +295,17 @@ function markImgCheck(pTitleIconImg, stateType, idx){
     }
 }
 function waiteFreeCheck(){
+    //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    for(var i = 0; i < webToonData.length; i++){
+        for(var j = 0; j < webToonData[i].length; j++){
+            if(webToonData[i][j].waitFree >= 1){
+                waitFreeToonData.push(webToonData[i][j]);
+            }
+        }
+        
+    }
+}
+function waiteFreePureCheck(){
     //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
     for(var i = 0; i < webToonData.length; i++){
         for(var j = 0; j < webToonData[i].length; j++){

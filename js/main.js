@@ -100,7 +100,7 @@ window.addEventListener('load', function(){
     function createContents(startNum, endNum){
 
         for(var i = startNum; i < endNum; i++){
-            articleCreate(mainSection, mainDatas[i].name, mainDatas[i].listCnt, mainDatas[i].type, mainDatas[i].dataType, mainDatas[i].hot);
+            articleCreate(contentBox, mainSection, mainDatas[i].name, mainDatas[i].listCnt, mainDatas[i].type, mainDatas[i].dataType, mainDatas[i].hot);
         }
     }
     function createNoSlideBanner(){

@@ -1,0 +1,16 @@
+[
+    {
+        "name": "기다리면무료",
+        "listCnt": 4,
+        "type": 100,
+        "dataType": 0,
+        "hot":0
+    },
+    {
+        "name": "인기 소년만화",
+        "listCnt": 4,
+        "type": 2,
+        "dataType": 0,
+        "hot":1
+    }
+]

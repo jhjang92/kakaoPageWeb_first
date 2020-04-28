@@ -57,3 +57,57 @@
     opacity: .8;
     font-weight: normal;
 }
+
+/* subNoSlideBanner */
+.sub_noslide_banner{
+    margin-top: 10px;
+    background: white;
+    position: relative;
+    left: 0; top: 0;
+    font-size: 0;
+}
+.sub_noslide_banner > img:first-of-type{
+    width: 75%;
+    padding: 0 25% 0 0;
+}
+.sub_noslide_banner i{
+    position: absolute;
+    top: 0; right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.sub_noslide_banner i img:first-of-type{}
+.sub_noslide_banner i img:first-of-type{
+    width: 20px; height: 20px; margin-right: 6px;
+}
+.sub_noslide_banner i img:last-of-type{width: 10px;
+    margin-right: 20px;}
+
+.sub_cate_tab{
+    margin-top: 10px; padding: 0 20px;
+    background: white;
+    border-bottom: 1px solid rgb(241,241,241);
+}
+.sub_cate_tab ul{
+    display: flex;
+}
+.sub_cate_tab ul li{
+    font-size: 20px;
+    padding: 24px 14px 23px;
+    position: relative;
+}
+.sub_cate_tab ul li:first-of-type{
+    padding-left: 0;
+}
+.sub_cate_tab ul li::after{
+    content: ''; 
+    position: absolute;
+    top: 28px; right: 0;
+    width: 1px;
+    height: 12px; background: rgb(226, 226, 226);
+}
+.sub_cate_tab ul li:last-of-type::after{display: none;}
+
+.sub_cate_tab ul li a{color: rgb(187, 187, 187);}
+.sub_cate_tab ul li .sub_tab_active{color: rgb(51, 51, 51);}

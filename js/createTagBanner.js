@@ -62,6 +62,7 @@ function mainSlideBannerList(mainBannerDatas, ulBox, idx){
     ulBox.append(slideTopBannerList);
 
     var ListA = document.createElement('a');
+    ListA.href = "#";
     slideTopBannerList.append(ListA);
 
     var ListImg = document.createElement('img');
