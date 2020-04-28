@@ -1,0 +1,42 @@
+[
+    {
+        "name": "19금 특가전",
+        "img": "../img/home/rec_banner/resource00.png",
+        "link": "https://page.kakao.com/theme/poster?themeId=15780"
+    },
+    {
+        "name": "도령의 가족",
+        "img": "../img/home/rec_banner/resource01.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15775"
+    },
+    {
+        "name": "학산 스테디 학습만화",
+        "img": "../img/home/rec_banner/resource02.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15774"
+    },
+    {
+        "name": "호형호제",
+        "img": "../img/home/rec_banner/resource03.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15773"
+    },
+    {
+        "name": "권왕무적",
+        "img": "../img/home/rec_banner/resource04.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15772"
+    },
+    {
+        "name": "영주님은 엑스트라",
+        "img": "../img/home/rec_banner/resource05.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15770"
+    },
+    {
+        "name": "그 대공의 화려한 결혼은 사기&amp;생존 연애",
+        "img": "../img/home/rec_banner/resource06.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15769"
+    },
+    {
+        "name": "&lt;슬기로운 의사생활&gt; 이벤트",
+        "img": "../img/home/rec_banner/resource07.png",
+        "link": "https://page.kakao.com/appdownload"
+    }
+]

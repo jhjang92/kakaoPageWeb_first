@@ -1,0 +1,43 @@
+[
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource00.png",
+        "link": "https://page.kakao.com/waitfree12h?categoryUid=10"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource01.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15730"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource02.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15732"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource03.png",
+        "link": "https://page.kakao.com/appdownload"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource05.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15706"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource06.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15707"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource07.png",
+        "link": "https://page.kakao.com/theme/list?themeId=15688"
+    },
+    {
+        "name": "aa",
+        "img": "../img/home/sub_banner/resource08.png",
+        "link": "https://page.kakao.com/appdownload"
+    }
+    
+]

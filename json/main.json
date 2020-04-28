@@ -1,0 +1,95 @@
+[
+    {
+        "name": "기다리면무료 만화",
+        "listCnt": 4,
+        "type": 1,
+        "dataType": 0,
+        "hot":0
+    },
+    {
+        "name": "인기 소년만화",
+        "listCnt": 4,
+        "type": 2,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "인기 순정만화",
+        "listCnt": 4,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "조회수 랭킹",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 2,
+        "hot":1
+    },
+    {
+        "name": "추천 이벤트",
+        "listCnt": 1,
+        "type": 0,
+        "dataType": 0,
+        "hot":0
+    },
+    {
+        "name": "기다리면무료 VOD",
+        "listCnt": 4,
+        "type": 0,
+        "dataType": 1,
+        "hot":0
+    },
+    {
+        "name": "방송",
+        "name02": "핫픽",
+        "listCnt": 4,
+        "type": 0,
+        "dataType": 1,
+        "hot":0
+    },
+    {
+        "name": "영화",
+        "name02": "최신/인기",
+        "listCnt": 4,
+        "type": 0,
+        "dataType": 1,
+        "hot":0
+    },
+    {
+        "name": "선물하면 무료",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "도전! 밀리언페이지 웹툰",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "밀리언페이지 소설",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "화제의 베스트셀러",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    },
+    {
+        "name": "추천 이벤트",
+        "listCnt": 3,
+        "type": 1,
+        "dataType": 0,
+        "hot":1
+    }
+]
