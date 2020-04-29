@@ -10,7 +10,6 @@ window.addEventListener('load', function(){
     let fileIdx = 0;
     pro(file, fileIdx);
     function pro(url, idx){
-        console.log(url[idx]);
         fetch(url[idx])
         .then(response => response.json())
         .then(function(response){
@@ -57,7 +56,6 @@ window.addEventListener('load', function(){
        createContents(9, 12);
        createRecSlide(mainDatas[4], recSlideBannerDatas);
        createBottomAppDownLoad();
-       console.log(location.search);
    }
 
     function createMainSlide(){

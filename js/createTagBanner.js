@@ -202,13 +202,11 @@ function recommendEventBannerCreate(mainDatas, recSlideBannerDatas){
 }
 
 function recListCreate(recUlTag, recSlideBannerDatas, idx){
-    console.log(recSlideBannerDatas[idx].img);
     var recLi = document.createElement('ll');
     recLi.classList.add('slide_banner_list');
     recUlTag.append(recLi);
 
     var recA = document.createElement('a');
-    console.log(idx);
     recA.href = recSlideBannerDatas[idx].link;
     recLi.append(recA);
 
@@ -236,12 +234,9 @@ function bottomAppdownloadCreate(mainSection){
 
 function ListSizeCheck(targetUl, targetList){
     console.log("targetList");
-    console.log(targetList.length);
     var widthValue = 0;
     for(var i = 0; i < targetList.length; i++){
-        console.log(parseInt(window.getComputedStyle(targetList[i]).marginRight.replace("px", "")) + targetList[i].offsetWidth);
         widthValue += parseInt(window.getComputedStyle(targetList[i]).marginRight.replace("px", "")) + targetList[i].offsetWidth;
     }
-    console.log(widthValue);
     targetUl.style.width = widthValue + "px";
 }

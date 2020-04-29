@@ -1,6 +1,8 @@
 let loadingState = true;
 let contentBox, contentBoxTag;
-let webToonData, pureToon, boyToon, dramaToon, blToon, actionToon, waitFreeToonData = [], vodData;
+let webToonData, pureToon, boyToon, dramaToon, blToon, actionToon, 
+waitFreeToonData = [], waitFreePureData = [], waitFreeBoyData = [], waitFreeDramaData = [], waitFreeBlData = [], waitFreeActionData = [],
+vodData;
 window.addEventListener('DOMContentLoaded', function(){
 
     var toonUrl = "../json/toon.json";
@@ -42,7 +44,7 @@ function articleCreate(contentBoxTag, mainSection, content, addListCnt, type, da
             mainSection.append(contentBoxTag);
         }
     }
-
+    console.log(type);
     var typeData; //main 에서 받아온 type을 기준으로 data를 담아서 진행
     switch(type){
         case 0: typeData = "웹툰"; break;
@@ -52,13 +54,42 @@ function articleCreate(contentBoxTag, mainSection, content, addListCnt, type, da
         case 4: typeData = blToon; break;
         case 5: typeData = actionToon; break;
         case 50: typeData = vodData; break;
-        case 100: typeData = waitFreeToonData; addListCnt = waitFreeToonData.length; break;
+        case 100: 
+            waiteFreeCheck();
+            typeData = waitFreeToonData; 
+            addListCnt = waitFreeToonData.length; 
+            break;
+        case 101: 
+            waiteFreePureCheck();
+            typeData = waitFreePureData; 
+            addListCnt = waitFreePureData.length;
+            break;
+        case 102: 
+            waiteFreeBoyCheck();
+            typeData = waitFreeBoyData; 
+            addListCnt = waitFreeBoyData.length;
+        break;
+        case 103:
+            waiteFreeDramaCheck();
+            typeData = waitFreeDramaData; 
+            addListCnt = waitFreeDramaData.length;
+        break;
+        case 104: 
+            waiteFreeBlCheck();
+            typeData = waitFreeBlData; 
+            addListCnt = waitFreeBlData.length;
+        break;
+        case 105: 
+            waiteFreeActionCheck();
+            typeData = waitFreeActionData; 
+            addListCnt = waitFreeActionData.length;
+        break;
     }
 
     var article = document.createElement('article');
     contentBoxTag.append(article);
-
-    if(dataType != ""){
+    console.log(dataType);
+    if(dataType != null){
         var h3 = document.createElement('h3');
         h3.title = content;
         h3.innerText = content;
@@ -296,6 +327,7 @@ function markImgCheck(pTitleIconImg, stateType, idx){
 }
 function waiteFreeCheck(){
     //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    waitFreeToonData = [];
     for(var i = 0; i < webToonData.length; i++){
         for(var j = 0; j < webToonData[i].length; j++){
             if(webToonData[i][j].waitFree >= 1){
@@ -304,15 +336,58 @@ function waiteFreeCheck(){
         }
         
     }
+    console.log(waitFreeToonData);
 }
 function waiteFreePureCheck(){
+    console.log("waiteFreePureCheck");
     //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
-    for(var i = 0; i < webToonData.length; i++){
-        for(var j = 0; j < webToonData[i].length; j++){
-            if(webToonData[i][j].waitFree >= 1){
-                waitFreeToonData.push(webToonData[i][j]);
-            }
+    waitFreePureData = [];
+
+    for(var i = 0; i < waitFreeToonData.length; i++){
+        if(waitFreeToonData[i].webToonType == 1){
+            waitFreePureData.push(waitFreeToonData[i]);
         }
-        
+    }
+}
+function waiteFreeBoyCheck(){
+    console.log("waiteFreePureCheck");
+    waitFreeBoyData = [];
+    //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    for(var i = 0; i < waitFreeToonData.length; i++){
+        if(waitFreeToonData[i].webToonType == 2){
+            waitFreeBoyData.push(waitFreeToonData[i]);
+        }
+    }
+}
+function waiteFreeDramaCheck(){
+    console.log("waiteFreePureCheck");
+    waitFreeDramaData = [];
+    //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    for(var i = 0; i < waitFreeToonData.length; i++){
+        if(waitFreeToonData[i].webToonType == 3){
+            waitFreeDramaData.push(waitFreeToonData[i]);
+        }
+    }
+}
+
+function waiteFreeBlCheck(){
+    console.log("waiteFreePureCheck");
+    waitFreeBlData = [];
+    //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    for(var i = 0; i < waitFreeToonData.length; i++){
+        if(waitFreeToonData[i].webToonType == 4){
+            waitFreeBlData.push(waitFreeToonData[i]);
+        }
+    }
+}
+
+function waiteFreeActionCheck(){
+    console.log("waiteFreePureCheck");
+    waitFreeActionData = [];
+    //boyToon 을 포함한 여러개 서브카테고리의 길이를 다 더해서 계산.
+    for(var i = 0; i < waitFreeToonData.length; i++){
+        if(waitFreeToonData[i].webToonType == 5){
+            waitFreeActionData.push(waitFreeToonData[i]);
+        }
     }
 }

@@ -3,14 +3,42 @@
         "name": "기다리면무료",
         "listCnt": 4,
         "type": 100,
-        "dataType": 0,
+        "dataType": null,
         "hot":0
+    },
+    {
+        "name": "인기 순정만화",
+        "listCnt": 4,
+        "type": 101,
+        "dataType": null,
+        "hot":1
     },
     {
         "name": "인기 소년만화",
         "listCnt": 4,
-        "type": 2,
-        "dataType": 0,
+        "type": 102,
+        "dataType": null,
+        "hot":1
+    },
+    {
+        "name": "인기 드라마만화",
+        "listCnt": 4,
+        "type": 103,
+        "dataType": null,
+        "hot":1
+    },
+    {
+        "name": "인기 BL만화",
+        "listCnt": 4,
+        "type": 104,
+        "dataType": null,
+        "hot":1
+    },
+    {
+        "name": "인기 액션만화",
+        "listCnt": 4,
+        "type": 105,
+        "dataType": null,
         "hot":1
     }
 ]
