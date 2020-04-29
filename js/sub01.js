@@ -1,89 +1,69 @@
 window.addEventListener("DOMContentLoaded", function(){
 
-    let subCreateData;
+    let subCreateData, viewSubNabTap, viewSubTap;
 
     var sub01ContentBox = document.querySelector('.content_box');
-    sub01WaitFreeData();
+    sub01WaitFreeData(0);
+
+    var subCateNabTabBtn = document.querySelector('.sub_cate_nav');
+    subCateNabTabBtn.addEventListener('click', subNabTabChange);
 
     var subCateTabUlBtn = document.querySelector('.sub_cate_tab ul');
-
     subCateTabUlBtn.addEventListener('click', subTabChange);
 
-    function subTabChange(){
+    function subNabTabChange(){
         event.preventDefault();
+
         var target = event.target;
-        var subTabList = sub01ContentBox.querySelector('article');
-        if(subTabList != undefined){
-            console.log(sub01ContentBox.querySelector('article'));
-            subTabList.remove();
-            
-        }
-        switch(target.innerText){
-            case "전체": sub01WaitFreeData(); break;
-            case "순정": sub01WaitFreePureData(); break;
-            case "소년": sub01WaitFreeBoyData(); break;
-            case "드라마": sub01WaitFreeDramaData(); break;
-            case "BL": sub01WaitFreeBlData(); break;
-            case "액션무협": sub01WaitFreeActionData(); break;
-            default: console.log("버튼아님"); break;
+        if(target.href != undefined){
+
+            var targetClass = document.querySelector('.sub_nav_active');
+            targetClass.classList.remove('sub_nav_active');
+            event.target.classList.add('sub_nav_active');
+
+            if(sub01ContentBox != undefined){
+                console.log(sub01ContentBox.querySelector('article'));
+                sub01ContentBox.remove();
+            }
+
+
         }
     }
 
+    function subTabChange(){
+       event.preventDefault();
+       var target = event.target;
+       if(target.href != undefined){
+            var subTabList = sub01ContentBox.querySelector('article');
+            if(subTabList != undefined){
+                console.log(sub01ContentBox.querySelector('article'));
+                subTabList.remove();
+            }
 
+            var targetClass = document.querySelector('.sub_tab_active');
+            targetClass.classList.remove('sub_tab_active');
+            event.target.classList.add('sub_tab_active');
 
-    function sub01WaitFreeData(){
-        fetch("../json/sub01.json")
-            .then(response => response.json())
-            .then(function(response){
-                subCreateData = response;
-                
-                articleCreate(sub01ContentBox, "", subCreateData[0].name, 40, subCreateData[0].type, subCreateData.dataType, subCreateData.hot);
-            })
-    }
-    function sub01WaitFreePureData(){
-        fetch("../json/sub01.json")
-            .then(response => response.json())
-            .then(function(response){
-                subCreateData = response;
-                
-                articleCreate(sub01ContentBox, "", subCreateData[1].name, 40, subCreateData[1].type, subCreateData.dataType, subCreateData.hot);
-            })
-    }
-    function sub01WaitFreeBoyData(){
-        fetch("../json/sub01.json")
-            .then(response => response.json())
-            .then(function(response){
-                subCreateData = response;
-                
-                articleCreate(sub01ContentBox, "", subCreateData[2].name, 40, subCreateData[2].type, subCreateData.dataType, subCreateData.hot);
-            })
-    }
-    function sub01WaitFreeDramaData(){
-        fetch("../json/sub01.json")
-            .then(response => response.json())
-            .then(function(response){
-                subCreateData = response;
-                
-                articleCreate(sub01ContentBox, "", subCreateData[3].name, 40, subCreateData[3].type, subCreateData.dataType, subCreateData.hot);
-            })
+            switch(target.innerText){
+                case "전체": sub01WaitFreeData(0); break;
+                case "순정": sub01WaitFreeData(1); break;
+                case "소년": sub01WaitFreeData(2); break;
+                case "드라마": sub01WaitFreeData(3); break;
+                case "BL": sub01WaitFreeData(4); break;
+                case "액션무협": sub01WaitFreeData(5); break;
+                default: break;
+            }
+       }
     }
 
-    function sub01WaitFreeBlData(){
+    function sub01WaitFreeData(idx){
         fetch("../json/sub01.json")
             .then(response => response.json())
             .then(function(response){
                 subCreateData = response;
                 
-                articleCreate(sub01ContentBox, "", subCreateData[4].name, 40, subCreateData[4].type, subCreateData.dataType, subCreateData.hot);
+                articleCreate(sub01ContentBox, "", subCreateData[idx].name, 40, subCreateData[idx].type, subCreateData.dataType, subCreateData.hot);
             })
     }
-    function sub01WaitFreeActionData(){
-        fetch("../json/sub01.json")
-            .then(response => response.json())
-            .then(function(response){
-                subCreateData = response;
-                
-                articleCreate(sub01ContentBox, "", subCreateData[5].name, 50, subCreateData[5].type, subCreateData.dataType, subCreateData.hot);
-            })
-    }
+    
 });

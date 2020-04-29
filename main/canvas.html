@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    
+<canvas id="canvas" width="600" height="600">
+    현재 브라우저가 canvas를 지원하지 않습니다.
+</canvas>
+
+<script>
+    
+    var canvas = document.querySelector('#canvas');
+    var ctx = canvas.getContext('2d');
+    var bln = false;
+    canvas.style.border = "1px solid #f00";
+    
+    ctx.moveTo(100,100);
+    ctx.lineTo(150,150);
+    ctx.fill();
+</script>
+
+
+
+
+</body>
+
+</html>
